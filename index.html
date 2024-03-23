@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="asset/css/all.min.css">
+        <link rel="stylesheet" href="asset/Bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="asset/css/style.css">
+        <title>Calculator</title>
+        <style>
+                .body {
+                        background-color: white;
+                        color: black;
+                }
+
+                .togle-btn{
+                        position: absolute;
+                        top: 40px;
+                        right: 40px;
+                        background-color: black;
+                        color: white;
+                        border-radius: 10px;
+                        padding: 7px;
+                }
+
+                .togle-btn-dark{
+                        background-color: white;
+                        color: black;
+                }
+
+                .dark-mode {
+                        background-color: black;
+                        color: white;
+                }
+
+                .screen {
+                        background-color: rgb(255, 255, 227);
+                }
+
+                .bttn {
+                        transition: transform 0.25s ease-in-out
+                }
+
+                .bttn:hover {
+                        transform: scale(1.05);
+                        transition: all 0.4s ease-in-out
+                }
+
+                .nmbr {
+                        background-color: #00AAFF;
+                }
+
+                .nmbr:hover {
+                        background-color: #56C7FF;
+                        transition: transform 0.25s ease-in-out
+                }
+
+                .oper {
+                        background-color: #00AF00;
+                }
+
+                .oper:hover {
+                        background-color: #3DD93D;
+                }
+
+                .del {
+                        background-color: #FF4141;
+                }
+
+                .del:hover {
+                        background-color: #FF4141;
+                }
+        </style>
+</head>
+
+<body>
+        <button class="togle-btn" id="btttn" onclick="mode()">Light/Dark Mode</button>
+
+        <div class="container text-center">
+                <p class="fw-bold fs-1 mt-5">Calculator</p>
+                <div class="text-center mx-auto" style="width: 260px;">
+
+                        <div class="mb-3">
+                                <input class="screen fw-bold fs-5 p-2" type="text" id="screen" placeholder="Calculate"
+                                        style="height: 70px; width: 278px; margin-left: -10px; border: 2px solid black;"
+                                        readonly>
+                        </div>
+
+                        <div class="row my-2">
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="1" onclick="input(1)"></div>
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="2" onclick="input(2)"></div>
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="3" onclick="input(3)"></div>
+                                <div class="col-3 p-0"><input class="bttn oper text-white fw-bold"
+                                                style="font-size: 17px; padding: 17px 23px;" type="button" value="+"
+                                                onclick="input('+')"></div>
+                        </div>
+
+                        <div class="row my-2">
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="4" onclick="input(4)"></div>
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="5" onclick="input(5)"></div>
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="6" onclick="input(6)"></div>
+                                <div class="col-3 p-0"><input class="bttn oper text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="-" onclick="input('-')"></div>
+                        </div>
+
+                        <div class="row my-2">
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="7" onclick="input(7)"></div>
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="8" onclick="input(8)"></div>
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="9" onclick="input(9)"></div>
+                                <div class="col-3 p-0"><input class="bttn oper text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="*" onclick="input('*')"></div>
+                        </div>
+
+                        <div class="row my-2">
+                                <div class="col-3 p-0"><input class="bttn del text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="C" onclick="empty()"></div>
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4 "
+                                                type="button" value="0" onclick="input(0)"></div>
+                                <div class="col-3 p-0"><input class="bttn nmbr text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="=" onclick="calculate()"></div>
+                                <div class="col-3 p-0"><input class="bttn oper text-white fs-5 fw-bold py-3 px-4"
+                                                type="button" value="/" onclick="input('/')"></div>
+                        </div>
+
+                </div>
+        </div>
+
+
+
+        <script src="asset/js/script.js"></script>
+
+</body>
+
+</html>
